@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './logo3.svg';
 import './App.css';
 
 function App() {
@@ -7,15 +7,14 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        Hi, I'm Ivy. I'm a multimedial artist and soon-to-be Front End Web Developer</p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://ivesersky-portfolio.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          and this is my Portfolio
         </a>
       </header>
     </div>
