@@ -3,13 +3,14 @@
 //listado de categorias clickeables (p)
 //un componente CartWidget.js con un icono, ubicado en el navbar
 import React from "react";
-import CartWidget from "./CartWidget";
+import LogoBar from "./Logo";
 import "./nav.css";
+import CartWidget from "../CartWidget";
 
 function NavBar() {
     return (
         <nav>
-            <CartWidget />
+            <LogoBar />
             <div className="itemNav">
                 <li>HOME</li>
             </div>
@@ -19,6 +20,7 @@ function NavBar() {
             <div className="itemNav">
                 <li>SHOP</li>
             </div>
+            <CartWidget />
         </nav>
     );
 }

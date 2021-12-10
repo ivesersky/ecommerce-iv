@@ -1,16 +1,17 @@
 
 import "./App.css";
-import ItemListContainer from "./components/container/ItemListContainer";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/MainBody/ItemListContainer";
 
 function App() {
-    return (
-    
-        <div className="App">
-            <NavBar/>
+    return (//siempre retorna 1 SOLO COMPONENTE
+    <> 
+                <NavBar/>
            <ItemListContainer/>
-        </div>
+    </>
+ 
     );
+    
 }
 
 export default App;
