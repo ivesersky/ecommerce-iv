@@ -12,13 +12,16 @@ function NavBar() {
         <nav>
             <LogoBar />
             <div className="itemNav">
-                <li>HOME</li>
+             <a href="/home">HOME</a>
             </div>
             <div className="itemNav">
-                <li>ABOUT US</li>
+            <a href="/aboutus">ABOUT US</a>
             </div>
             <div className="itemNav">
-                <li>SHOP</li>
+            <a href="/gallery">GALLERY</a>
+            </div>
+            <div className="itemNav">
+            <a href="/products">PRODUCTS</a>
             </div>
             <CartWidget />
         </nav>
