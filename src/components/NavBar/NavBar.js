@@ -5,25 +5,20 @@
 import React from "react";
 import LogoBar from "./Logo";
 import "./nav.css";
-import CartWidget from "../CartWidget";
+import CartWidget from "../Link/CartWidget";
+import Link from "../Link";
+
 
 function NavBar() {
     return (
         <nav>
             <LogoBar />
-            <div className="itemNav">
-             <a href="/home">HOME</a>
-            </div>
-            <div className="itemNav">
-            <a href="/aboutus">ABOUT US</a>
-            </div>
-            <div className="itemNav">
-            <a href="/gallery">GALLERY</a>
-            </div>
-            <div className="itemNav">
-            <a href="/products">PRODUCTS</a>
-            </div>
-            <CartWidget />
+            <Link ruta="/home" nombre="HOME"/>
+            <Link ruta="/productos" nombre="PRODUCTOS"/> {/*  de aca salen las categorias */}
+            <Link ruta="/comoComprar" nombre="COMO COMPRAR"/>
+            <Link ruta="/quienesSomos" nombre="QUIENES SOMOS"/>
+            <Link ruta="/contacto" nombre="CONTACTO"/>
+            <CartWidget ruta="/carrito"/>
         </nav>
     );
 }
