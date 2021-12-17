@@ -2,23 +2,23 @@
 //brand o titulo/nombre de la tienda
 //listado de categorias clickeables (p)
 //un componente CartWidget.js con un icono, ubicado en el navbar
-import React from "react";
 import LogoBar from "./Logo";
-import "./nav.css";
 import CartWidget from "../Link/CartWidget";
 import Link from "../Link";
-
+import {styles} from "../styles"
 
 function NavBar() {
     return (
-        <nav>
+        <nav style={styles.nav}>
             <LogoBar />
+            <ul style={styles.list}>
             <Link ruta="/home" nombre="HOME"/>
             <Link ruta="/productos" nombre="PRODUCTOS"/> {/*  de aca salen las categorias */}
             <Link ruta="/comoComprar" nombre="COMO COMPRAR"/>
             <Link ruta="/quienesSomos" nombre="QUIENES SOMOS"/>
             <Link ruta="/contacto" nombre="CONTACTO"/>
             <CartWidget ruta="/carrito"/>
+            </ul>
         </nav>
     );
 }

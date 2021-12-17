@@ -1,0 +1,14 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    pointer-events: none;
+    width: 6rem;
+    font-size: small;
+    font-weight: 800;
+    margin-left: 40px;
+}
+.logo-container img {
+    width: 80%;
+}

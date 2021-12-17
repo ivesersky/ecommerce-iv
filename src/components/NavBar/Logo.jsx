@@ -1,6 +1,6 @@
 import logo from "./logo3.svg";
 import React from "react";
-import "./nav.css";
+import "./logo.css";
 
 const LogoBar = () => {
     return (
