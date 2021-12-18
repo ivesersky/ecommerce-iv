@@ -23,7 +23,6 @@ export const styles = {
         fontWeight: "900",
     },
     hover: {
-        //ARREGLAR ESTO DEL HOVERRR
         fontWeight: "bold",
         filter: "invert(90%)",
         transform: "scale(1.1)",
