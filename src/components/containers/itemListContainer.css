@@ -5,7 +5,7 @@
     color: #000;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.712);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.7px);
@@ -26,5 +26,5 @@ img {
     flex-flow: row wrap;
     margin: 20px;
     width: 20vw;
-    height: 20vh;
+    max-height: 10vh;
 }

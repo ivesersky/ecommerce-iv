@@ -23,7 +23,7 @@ const MockedItems = [
     },
     {
         id: 4,
-        title: "Amazonita Rusa Pulida",
+        title: "Amazonita Pulida",
         description: "Descripcion del producto bla bla",
         price: 700,
         pictureUrl: "../img/amazonita.jpg",
