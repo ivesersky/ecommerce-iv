@@ -8,6 +8,12 @@ import Link from "../Link";
 import {styles} from "../styles"
 
 function NavBar() {
+    const categorias =[
+        {id:'todos', address: '/', text:'TODOS LOS PRODUCTOS'},
+        {id:'A', address: '/category/A', text:'CATEGORIA A'},
+        {id:'B', address: '/category/B', text:'CATEGORIA B'},
+
+    ];
     return (
         <nav style={styles.nav}>
             <LogoBar />

@@ -8,17 +8,14 @@ const ItemList = ({ items }) => {
         <>
             {items.map((item) => {
                 return (
-                    <div>
-                        <Item
-                            key={item.id}
-                            img={item.img}
-                            title={item.title}
-                            description={item.description}
-                            id={item.id}
-                            price={item.price}
-                            item={item}
-                        />
-                    </div>
+                    <Item
+                        key={item.id}
+                        img={item.img}
+                        title={item.title}
+                        description={item.description}
+                        price={item.price}
+                        item={item}
+                    />
                 );
             })}
         </>
