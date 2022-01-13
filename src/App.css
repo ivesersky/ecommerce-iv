@@ -1,17 +1,22 @@
 body {
     /* background: url("./img/blurry-gradient.png") no-repeat;
     background-size: cover; */
-    background: #ffefba; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to right,
-        #ffffff,
-        #ffefba no-repeat
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #ffffff,
-        #ffefba
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    overflow: hidden;
+    /* background: -webkit-radial-gradient(
+        circle center,
+        #e76ff0,
+        #f89b8f,
+        #4558ac no-repeat
+    ); /* Chrome 10-25, Safari 5.1-6 
+    background: radial-gradient(circle, #e76ff0, #f89b8f, #4558ac); */
+    background: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(#d8c7e6),
+            to(#acb0ecd7)
+        )
+        fixed;
+    /* background: #95a37a no-repeat;
+    background: linear-gradient(0deg, #d8c7e6 0%, #4750d1d7 100%); */
 }

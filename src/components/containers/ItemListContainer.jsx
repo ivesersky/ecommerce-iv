@@ -8,8 +8,6 @@ import MockedItems from "../mock/MockedItems";
 import ItemList from "../ItemList/itemList.jsx";
 
 const ItemListContainer = () => {
-    //aca va la PROMISE
-
     const [items, setItems] = useState([]); //este es el estado que va a guardar el mockeditems
 
     useEffect(() => {

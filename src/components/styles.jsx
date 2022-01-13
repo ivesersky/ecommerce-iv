@@ -8,7 +8,7 @@ export const styles = {
         listStyleType: "none",
         display: "flex",
         justifyContent: "space-evenly",
-        width: "90vw",
+        width: "99vw",
         backgroundColor: "transparent",
     },
     nav: {
