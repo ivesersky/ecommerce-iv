@@ -10,24 +10,20 @@ const App = () => {
             <BrowserRouter>
                 <NavBar />
                 <Routes>
+                    {" "}
+                    {/* antiguo switch */}
                     <Route
                         exact
-                        path="/"
+                        path="/productos"
                         element={
                             <div className="container">
                                 <ItemListContainer />
                             </div>
                         }
                     ></Route>
-                    {/* esto es para hacer el filtrado de categoria. ver bien la clase de nuevo */}
-                    {/* <Route exact path="/category/:catId">
-                        <div className="container">
-                            <ItemListContainer greeting={"FILTRADO"} />
-                        </div>
-                    </Route> */}
                     <Route
                         exact
-                        path="/product/:itemId"
+                        path="/productos/:itemId"
                         element={<ItemDetailContainer />}
                     ></Route>
                 </Routes>

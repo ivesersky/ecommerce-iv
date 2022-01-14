@@ -1,4 +1,4 @@
-//aca va la cardinal
+//aca va la card
 
 import "../containers/itemListContainer.css";
 import { Link } from "react-router-dom";
@@ -7,9 +7,7 @@ const Item = ({ item }) => (
     <Link to={`/product/${item.id}`}>
         <div className="blurbg">
             <img src={`./img/${item.pictureUrl}`} alt="" />
-            <h1>{item.title}</h1>
-
-            <p>{"$" + item.price}</p>
+            <h2>{item.title}</h2>
         </div>
     </Link>
 );

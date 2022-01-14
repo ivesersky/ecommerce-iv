@@ -31,3 +31,10 @@ img {
     width: 90vw;
     height: 80vh;
 }
+
+.defaultText {
+    color: rgba(0, 0, 0, 0.671);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    text-align: center;
+}
