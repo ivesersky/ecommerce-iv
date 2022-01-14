@@ -1,4 +1,4 @@
-const MockedItems = [
+const data = [
     //esto es un array
     {
         id: 1,
@@ -43,5 +43,4 @@ const MockedItems = [
         pictureUrl: "../img/rombo.jpg",
     },
 ];
-
-export default MockedItems;
+export default data;

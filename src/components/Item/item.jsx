@@ -1,15 +1,18 @@
 //aca va la card
-
+import React from "react";
 import "../containers/itemListContainer.css";
 import { Link } from "react-router-dom";
 
-const Item = ({ item }) => (
-    <Link to={`/product/${item.id}`}>
-        <div className="blurbg">
-            <img src={`./img/${item.pictureUrl}`} alt="" />
-            <h2>{item.title}</h2>
-        </div>
-    </Link>
-);
-
-export default Item;
+export const Item = ({ id, title, pictureUrl, price, description }) => {
+    return (
+        <Link to={`/producto/${id}`}>
+            <div className="blurbg">
+                <img src={`./img/${pictureUrl}`} alt="" />
+                <div>
+                    <h2>{title}</h2>
+                    <span>{description}</span>
+                </div>
+            </div>
+        </Link>
+    );
+};

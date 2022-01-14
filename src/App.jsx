@@ -1,6 +1,6 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import ItemListContainer from "./components/containers/ItemListContainer";
+import { ItemListContainer } from "./components/containers/ItemListContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import { ItemDetailContainer } from "./components/containers/ItemDetailContainer";
@@ -23,7 +23,7 @@ const App = () => {
                     ></Route>
                     <Route
                         exact
-                        path="/productos/:itemId"
+                        path="/producto/:itemId"
                         element={<ItemDetailContainer />}
                     ></Route>
                 </Routes>

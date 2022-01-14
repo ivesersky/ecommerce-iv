@@ -27,4 +27,11 @@ export const styles = {
         filter: "invert(90%)",
         transform: "scale(1.1)",
     },
+    flexCol: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flexStart",
+        alignSelf: "flex-start",
+        justifySelf: "flex-start",
+    },
 };

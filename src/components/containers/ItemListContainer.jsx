@@ -1,37 +1,39 @@
-//aca va llamada API o la promesa
-//manejo de estados
-//vamos a traer 1 itemList
-//este itemList va  a mapear item y devolverlo como lista
 import "./itemListContainer.css";
 import { useEffect, useState } from "react";
-import MockedItems from "../mock/MockedItems";
-import ItemList from "../ItemList/itemList.jsx";
+import data from "../data/data";
+import { ItemList } from "../ItemList/itemList";
+import { useParams } from "react-router-dom";
 
-const ItemListContainer = () => {
-    const [items, setItems] = useState([]); //este es el estado que va a guardar el mockeditems
+export const ItemListContainer = ({ item }) => {
+    const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const { catId } = useParams();
+
     useEffect(() => {
         setLoading(true);
-        //promesa
-        const itemPromise = new Promise((res, rej) => {
-            setTimeout(function () {
-                res(MockedItems);
+        const getItems = new Promise((resolve) => {
+            setTimeout(() => {
+                const myData = catId
+                    ? data.filter((item) => item.category === catId)
+                    : data;
+
+                resolve(myData);
             }, 1000);
         });
-        itemPromise
+
+        getItems
             .then((res) => {
                 setItems(res);
             })
             .finally(() => setLoading(false));
-    }, [items]);
+    }, [catId]);
 
     return loading ? (
-        <h1 className="defaultText">Cargando...</h1>
+        <h2>Cargando...</h2>
     ) : (
         <>
             <ItemList items={items} />
         </>
     );
 };
-
-export default ItemListContainer;

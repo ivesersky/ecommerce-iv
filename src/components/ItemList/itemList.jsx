@@ -1,22 +1,14 @@
 //esto va a mapear los productos (items)y devolver un
-
-import Item from "../Item/item";
+import React from "react";
+import { Item } from "../Item/item";
 import "../containers/itemListContainer.css";
 
-const ItemList = ({ items }) => {
+export const ItemList = ({ items }) => {
     return (
         <>
-            {items.map((item) => {
-                return (
-                    <Item
-                        key={item.id}
-                        item={item}
-                        img={item.img}
-                        title={item.title}
-                    />
-                );
-            })}
+            {items?.map((item) => (
+                <Item {...item} key={item.id} />
+            ))}
         </>
     );
 };
-export default ItemList;
