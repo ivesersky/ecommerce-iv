@@ -42,5 +42,19 @@ const data = [
         price: 850,
         pictureUrl: "../img/rombo.jpg",
     },
+    {
+        id: 7,
+        title: "Jardin",
+        description: "Fotografia 35mm Kodak Gold 200",
+        price: 850,
+        pictureUrl: "../img/jardin.jpg",
+    },
+    {
+        id: 8,
+        title: "Gati",
+        description: "Fotografia 35mm Kodak Gold 200",
+        price: 850,
+        pictureUrl: "../img/gati.jpg",
+    },
 ];
 export default data;
