@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ItemDetail } from "../ItemDetail";
 import data from "../data/data.jsx";
 import { useParams } from "react-router-dom";
+import "./itemListContainer.css";
 
 export const ItemDetailContainer = () => {
     const [product, setProduct] = useState([]);
@@ -26,5 +27,9 @@ export const ItemDetailContainer = () => {
             .finally(() => setLoading(false));
     }, []);
 
-    return loading ? <h2>Cargando...</h2> : <ItemDetail item={product} />;
+    return loading ? (
+        <h1 className="defaultText">Cargando...</h1>
+    ) : (
+        <ItemDetail item={product} />
+    );
 };
