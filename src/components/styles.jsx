@@ -34,4 +34,7 @@ export const styles = {
         alignSelf: "flex-start",
         justifySelf: "flex-start",
     },
+    detailRow: {
+        textDecoration: "none",
+    },
 };
