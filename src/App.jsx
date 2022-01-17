@@ -14,7 +14,7 @@ const App = () => {
                     {/* antiguo switch */}
                     <Route
                         exact
-                        path="/productos"
+                        path="*"
                         element={
                             <div className="container">
                                 <ItemListContainer />
