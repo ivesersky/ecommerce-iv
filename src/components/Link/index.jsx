@@ -17,7 +17,6 @@ const Link = () => {
         });
         promesaCat.then((res) => setCategorias(res)); //guardo esa data que traje de la api en un estado
     }, []);
-    console.log(Categorias);
 
     return (
         <>

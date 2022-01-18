@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import data from "../data/data";
 import { ItemList } from "../ItemList/itemList";
 import { useParams } from "react-router-dom";
+import ItemListLoader from "../ItemListLoader";
 
 export const ItemListContainer = ({ item }) => {
     const [items, setItems] = useState([]);
@@ -19,7 +20,7 @@ export const ItemListContainer = ({ item }) => {
                     : data;
 
                 resolve(myData);
-            }, 1000);
+            }, 2000);
         });
 
         getItems
@@ -29,11 +30,9 @@ export const ItemListContainer = ({ item }) => {
             .finally(() => setLoading(false));
     }, [catId]);
 
-    return loading ? (
-        <h1 className="defaultText">Cargando...</h1>
-    ) : (
-        <>
-            <ItemList items={items} />
-        </>
+    return (
+        <div className="container">
+            {loading ? <ItemListLoader /> : <ItemList items={items} />}
+        </div>
     );
 };
