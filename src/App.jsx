@@ -32,6 +32,7 @@ const App = () => {
                             element={<ItemDetailContainer />}
                         ></Route>
                         <Route exact path="/carrito" element={<Carrito />} />
+
                         <Route
                             exact
                             path="/perfil"

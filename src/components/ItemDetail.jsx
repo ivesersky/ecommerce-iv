@@ -4,9 +4,7 @@ import "../components/containers/itemListContainer.css";
 import { CartContext } from "../context/cartContext";
 import "../components/Button.css";
 
-export const ItemDetail = ({ item }) => {
-    const [add, setAdd] = useState(false);
-    const { addItem } = useContext(CartContext);
+export const ItemDetail = ({ item, removeItem }) => {
     const { cart, setCart } = useContext(CartContext);
     console.log(cart);
     return (
@@ -25,11 +23,14 @@ export const ItemDetail = ({ item }) => {
                             <h1>{item.title}</h1>
                             <p>{item.description}</p>
                             <h2>${item.price}</h2>
-                            <button
-                                onClick={() => setCart([...cart, item])}
-                                className="button-38 "
-                            >
+                            <button className="button-38 ">
                                 Agregar al carrito
+                            </button>
+                            <button
+                                className="button-38 "
+                                onClick={() => removeItem(item.id)}
+                            >
+                                Quitar
                             </button>
                         </section>
                     </div>
