@@ -1,27 +1,26 @@
 import { createContext, useContext } from "react";
 import { useState } from "react/cjs/react.development";
 
-export const CartContext = createContext();
+export const cartContext = createContext();
 
-export const CartProvider = ({ children }) => {
-    const [itemsCart, setItems] = useState([
-        { id: 1, title: "producto", cantidad: 5 },
-    ]);
+const { Provider } = cartContext;
 
-    const isInCart = (id) => {};
-
-    const addItem = (id, item, cantidad) => {
-        setItems([...item, { ...item, cantidad: cantidad }]);
-    };
-
-    const removeItem = (id) => {
-        const auxArray = itemsCart.filter((item) => item.id !== id);
-        setItems(auxArray);
-    };
-
-    return (
-        <CartContext.Provider value={{ itemsCart, removeItem }}>
-            {children}
-        </CartContext.Provider>
-    );
+export const useCartContext = () => {
+    return useContext(cartContext);
 };
+
+const CartProvider = ({ children }) => {
+    const [cartItems, setCartItems] = useState(0);
+
+    const addItemToCart = () => {
+        setCartItems(cartItems + 1);
+    };
+    const removeItemFromCart = () => {
+        setCartItems(cartItems - 1);
+    };
+
+    const globalValue = { cartItems, addItemToCart, removeItemFromCart };
+
+    return <Provider value={globalValue}>{children}</Provider>;
+};
+export default CartProvider;

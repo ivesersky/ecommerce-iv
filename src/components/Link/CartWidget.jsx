@@ -1,9 +1,12 @@
 import React from "react";
 import { styles } from "../styles";
 import { useState } from "react";
+import { useCartContext } from "../../context/CartContext";
 
 const CartWidget = ({ ruta }) => {
     const [hover, setHover] = useState(false);
+    const { cartItems } = useCartContext();
+
     return (
         <div styles={styles.list}>
             <a
@@ -13,6 +16,7 @@ const CartWidget = ({ ruta }) => {
                 onMouseLeave={() => setHover(false)}
             >
                 <i className="material-icons">shopping_cart</i>
+                <p>Total: {cartItems} items</p>
             </a>
         </div>
     );

@@ -1,12 +1,11 @@
 import { styles } from "./styles";
 import React, { useContext, useState } from "react";
 import "../components/containers/itemListContainer.css";
-import { CartContext } from "../context/cartContext";
 import "../components/Button.css";
+import { useCartContext } from "../context/CartContext";
 
-export const ItemDetail = ({ item, removeItem }) => {
-    const { cart, setCart } = useContext(CartContext);
-    console.log(cart);
+export const ItemDetail = ({ item }) => {
+    const { addItemToCart, removeItemFromCart } = useCartContext();
     return (
         <>
             {item &&
@@ -23,12 +22,15 @@ export const ItemDetail = ({ item, removeItem }) => {
                             <h1>{item.title}</h1>
                             <p>{item.description}</p>
                             <h2>${item.price}</h2>
-                            <button className="button-38 ">
-                                Agregar al carrito
+                            <button
+                                className="button-38 "
+                                onClick={() => addItemToCart()}
+                            >
+                                Agregar a carrito
                             </button>
                             <button
                                 className="button-38 "
-                                onClick={() => removeItem(item.id)}
+                                onClick={() => removeItemFromCart()}
                             >
                                 Quitar
                             </button>
