@@ -1,7 +1,7 @@
 import { styles } from "./styles";
 import React, { useContext, useState } from "react";
 import "../components/containers/itemListContainer.css";
-import { CartContext } from "../context/useContext";
+import { CartContext } from "../context/cartContext";
 import "../components/Button.css";
 
 export const ItemDetail = ({ item }) => {

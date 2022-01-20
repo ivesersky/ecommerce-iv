@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CartContext } from "../context/useContext";
+import { CartContext } from "../context/cartContext";
 
 const Carrito = () => {
     const { items, addItem } = useContext(CartContext); //useContext usado como hook

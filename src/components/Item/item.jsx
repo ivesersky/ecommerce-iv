@@ -3,11 +3,12 @@ import React from "react";
 import "../containers/itemListContainer.css";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
-import { CartContext } from "../context/cartContext";
+import { CartContext } from "../../context/cartContext";
+import { useContext } from "react/cjs/react.development";
 
 export const Item = ({ id, title, pictureUrl, description }) => {
-    const misItems = useContext(CartContext);
-    console.log(misItems);
+    const items = useContext(CartContext);
+    console.log({ items });
 
     return (
         <Link to={`/producto/${id}`} style={styles.detailRow}>
@@ -16,6 +17,7 @@ export const Item = ({ id, title, pictureUrl, description }) => {
                 <div>
                     <h2>{title}</h2>
                     <span>{description}</span>
+                    <button className="button-38 ">Agregar al carrito</button>
                 </div>
             </div>
         </Link>
