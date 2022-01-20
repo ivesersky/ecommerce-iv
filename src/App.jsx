@@ -6,13 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import { ItemDetailContainer } from "./components/containers/ItemDetailContainer";
 import "./components/containers/itemListContainer.css";
-import { CartProvider } from "./context/useContext";
 import Carrito from "./vistas/Carrito";
-
+import { CartProvider } from "./context/cartContext";
 const App = () => {
     return (
-        <React.Fragment>
-            <CartProvider>
+        <CartProvider>
+            <React.Fragment>
                 <BrowserRouter>
                     <NavBar />
                     <Routes>
@@ -47,8 +46,8 @@ const App = () => {
                         ></Route>
                     </Routes>
                 </BrowserRouter>
-            </CartProvider>
-        </React.Fragment>
+            </React.Fragment>
+        </CartProvider>
     );
 };
 
