@@ -2,6 +2,8 @@
                                 Button 38
                             </button> */
 .button-38 {
+    margin: 10px;
+
     background-color: #ffffff;
     border: 0;
     border-radius: 0.5rem;

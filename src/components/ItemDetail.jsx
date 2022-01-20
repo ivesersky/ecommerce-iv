@@ -7,6 +7,8 @@ import "../components/Button.css";
 export const ItemDetail = ({ item }) => {
     const [add, setAdd] = useState(false);
     const { addItem } = useContext(CartContext);
+    const { cart, setCart } = useContext(CartContext);
+    console.log(cart);
     return (
         <>
             {item &&
@@ -23,9 +25,11 @@ export const ItemDetail = ({ item }) => {
                             <h1>{item.title}</h1>
                             <p>{item.description}</p>
                             <h2>${item.price}</h2>
-                            <button to="/carrito" className="button-38">
-                                Agregar
-                                <i className="material-icons">shopping_cart</i>
+                            <button
+                                onClick={() => setCart([...cart, item])}
+                                className="button-38 "
+                            >
+                                Agregar al carrito
                             </button>
                         </section>
                     </div>
