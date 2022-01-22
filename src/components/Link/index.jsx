@@ -4,8 +4,7 @@ import React, { useEffect, useState } from "react";
 const Categorias = [
     { catId: "1", nombre: "HOME", ruta: "/home" },
     { catId: "2", nombre: "PRODUCTOS", ruta: "/productos" },
-    { catId: "3", nombre: "PERFIL", ruta: "/perfil" },
-    { catId: "4", nombre: "CONTACTO", ruta: "/contacto" },
+    { catId: "3", nombre: "CONTACTO", ruta: "/contacto" },
 ];
 
 const Link = () => {

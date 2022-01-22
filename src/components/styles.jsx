@@ -10,7 +10,7 @@ export const styles = {
     list: {
         listStyleType: "none",
         display: "grid",
-        gridTemplateColumns: "repeat(5,1fr)",
+        gridTemplateColumns: "repeat(4,1fr)",
         justifyContent: "space-evenly",
         alignItems: "center",
         textAlign: "center",

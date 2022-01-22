@@ -32,20 +32,14 @@ const App = () => {
                             path="/producto/:itemId"
                             element={<ItemDetailContainer />}
                         ></Route>
-                        <Route exact path="/carrito" element={<Carrito />} />
 
-                        <Route
-                            exact
-                            path="/perfil"
-                            element={"Perfil"}
-                            className="defaultText"
-                        ></Route>
                         <Route
                             exact
                             path="/contacto"
                             element={"Contacto"}
                             className="defaultText"
                         ></Route>
+                        <Route exact path="/carrito" element={<Carrito />} />
                     </Routes>
                 </BrowserRouter>
             </React.Fragment>
