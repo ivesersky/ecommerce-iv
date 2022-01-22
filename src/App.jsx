@@ -15,8 +15,8 @@ const App = () => {
             <React.Fragment>
                 <BrowserRouter>
                     <NavBar />
+
                     <Routes>
-                        {/* antiguo switch */}
                         <Route exact path="/home" element={<Home />}></Route>
                         <Route
                             exact
