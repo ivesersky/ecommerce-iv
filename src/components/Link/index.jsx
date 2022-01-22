@@ -6,16 +6,15 @@ const Categorias = [
     { catId: "2", nombre: "PRODUCTOS", ruta: "/productos" },
     { catId: "3", nombre: "PERFIL", ruta: "/perfil" },
     { catId: "4", nombre: "CONTACTO", ruta: "/contacto" },
-]; //esto simula una API
+];
 
 const Link = () => {
-    //promesa para poder mapear las categorias de la API
-    const [categorias, setCategorias] = useState([]); //pongo un array adentro pq lo voy a tener que mapear
+    const [categorias, setCategorias] = useState([]);
     useEffect(() => {
         const promesaCat = new Promise((res, rej) => {
             res(Categorias);
         });
-        promesaCat.then((res) => setCategorias(res)); //guardo esa data que traje de la api en un estado
+        promesaCat.then((res) => setCategorias(res));
     }, []);
 
     return (

@@ -1,4 +1,7 @@
 export const styles = {
+    logo: {
+        width: "20px",
+    },
     link: {
         textDecoration: "none",
         color: "rgb(0, 0, 0)",
@@ -6,13 +9,17 @@ export const styles = {
     },
     list: {
         listStyleType: "none",
-        display: "flex",
+        display: "grid",
+        gridTemplateColumns: "repeat(5,1fr)",
         justifyContent: "space-evenly",
+        alignItems: "center",
+        textAlign: "center",
         width: "99vw",
         backgroundColor: "transparent",
     },
     nav: {
-        margin: "40px",
+        marginTop: "40px",
+        position: "relative",
         display: "flex",
         height: "4rem",
         flexFlow: "row nowrap",
@@ -36,5 +43,22 @@ export const styles = {
     },
     detailRow: {
         textDecoration: "none",
+    },
+    container: {
+        margin: "2rem",
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+        gridTemplateRows: "repeat(2, 1fr)",
+        alignItems: "center",
+        justifyContent: "space-evenly",
+
+        gridGap: "10px",
+        width: "80vw",
+        height: "80vh",
+    },
+    loader: {
+        display: "flex",
+        flexDirection: "row",
+        width: "10%",
     },
 };

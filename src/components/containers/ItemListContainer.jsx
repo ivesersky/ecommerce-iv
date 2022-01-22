@@ -20,7 +20,7 @@ export const ItemListContainer = ({ item }) => {
                     : data;
 
                 resolve(myData);
-            }, 1000);
+            }, 2000);
         });
 
         getItems

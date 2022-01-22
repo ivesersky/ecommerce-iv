@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { ItemDetail } from "../ItemDetail";
 import data from "../data/data.jsx";
 import { useParams } from "react-router-dom";
-import "./itemListContainer.css";
 
 export const ItemDetailContainer = () => {
     const [product, setProduct] = useState([]);

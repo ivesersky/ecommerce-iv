@@ -10,7 +10,10 @@ import {styles} from "../styles"
 function NavBar() {
      return (
         <nav style={styles.nav}>
-            <LogoBar />
+            <a href="/home" >
+            <LogoBar/>
+            </a>
+            
             <ul style={styles.list}>
             <Link />
             <CartWidget ruta="/carrito"/>

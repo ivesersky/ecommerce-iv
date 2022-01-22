@@ -1,18 +1,18 @@
 import React from "react";
 import { Item } from "./Item/item";
+import { styles } from "./styles";
 const ItemListLoader = () => {
     return (
         <>
-            <div>
+            <div style={styles.container}>
                 {[...new Array(4)].map((_, index) => (
-                    <div className="blurbg" key={index}>
+                    <div style={styles.loader} key={index}>
                         <Item
-                            item={{
+                            {...{
                                 id: 0,
-                                title: "cargando...",
-                                thumbnail:
-                                    "https://i.stack.imgur.com/ATB3o.gif",
-                                price: "",
+                                title: " ",
+                                pictureUrl: "../img/Ripple-1s-200px.gif",
+                                description: "",
                             }}
                         />
                     </div>
