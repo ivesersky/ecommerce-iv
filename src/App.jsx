@@ -8,7 +8,6 @@ import { ItemDetailContainer } from "./components/containers/ItemDetailContainer
 import "./components/containers/itemListContainer.css";
 import Carrito from "./vistas/Carrito";
 import CartProvider from "./context/CartContext";
-import LogoBar from "./components/NavBar/Logo";
 
 const App = () => {
     return (

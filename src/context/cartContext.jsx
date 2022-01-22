@@ -10,7 +10,7 @@ export const useCartContext = () => {
 };
 
 const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState(0);
+    const [cartItems, setCartItems] = useState([]);
 
     const addItemToCart = () => {
         setCartItems(cartItems + 1);
@@ -20,7 +20,7 @@ const CartProvider = ({ children }) => {
     };
 
     const globalValue = { cartItems, addItemToCart, removeItemFromCart };
-
+    console.log(cartItems);
     return <Provider value={globalValue}>{children}</Provider>;
 };
 export default CartProvider;

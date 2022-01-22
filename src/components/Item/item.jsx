@@ -3,6 +3,7 @@ import React from "react";
 import "../containers/itemListContainer.css";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
+import "../Button.css";
 
 export const Item = ({ id, title, pictureUrl, description }) => {
     return (
@@ -12,7 +13,7 @@ export const Item = ({ id, title, pictureUrl, description }) => {
                 <div>
                     <h2>{title}</h2>
                     <span>{description}</span>
-                    <button to="/carrito" className="button-38">
+                    <button to="/carrito" className="button-30">
                         Ver mas
                     </button>
                 </div>

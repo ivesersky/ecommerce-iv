@@ -1,11 +1,97 @@
-/* <button class="button-38" role="button">
-                                Button 38
-                            </button> */
-.button-38 {
-    margin: 10px;
+/* CSS */
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #fcfcfd;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395a;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "Helvetica Neue", Helvetica, Arial;
+    font-size: 14px;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    margin-top: 20px;
+}
 
+.button-30:focus {
+    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button-30:active {
+    box-shadow: #d6d6e7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+/* CSS */
+.button-37 {
+    background-color: #d6f0de;
+    border: 1px solid #13aa52;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: rgb(8, 8, 8);
+    cursor: pointer;
+    font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont,
+        sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    padding: 10px 25px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-37:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+    transform: translateY(-2px);
+    background-color: #535fc78c;
+    border: 1px solid #535fc78c;
+}
+
+@media (min-width: 768px) {
+    .button-37 {
+        padding: 10px 30px;
+    }
+}
+.red {
+    background-color: #e2c4c4;
+    border: 1px solid #c75353;
+}
+
+/* CSS */
+.button-39 {
     background-color: #ffffff;
-    border: 0;
+    border: 1px solid rgb(209, 213, 219);
     border-radius: 0.5rem;
     box-sizing: border-box;
     color: #111827;
@@ -20,23 +106,31 @@
     text-align: center;
     text-decoration: none #d1d5db solid;
     text-decoration-thickness: auto;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
 }
 
-.button-38:hover {
+.button-39:hover {
     background-color: rgb(249, 250, 251);
-    filter: drop-shadow();
 }
 
-.button-38:focus {
+.button-39:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
 }
 
-.button-38:focus-visible {
-    box-shadow: #111827;
+.button-39:focus-visible {
+    box-shadow: none;
+}
+
+button:disabled,
+button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #aaa7a7;
+    cursor: not-allowed;
+    pointer-events: none;
 }
