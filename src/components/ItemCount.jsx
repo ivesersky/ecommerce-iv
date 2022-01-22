@@ -3,7 +3,7 @@ import { useCartContext } from "../context/CartContext";
 import "../components/Button.css";
 
 const ItemCount = ({ item, stock, initial, onAdd }) => {
-    const [quantity, setQty] = useState(initial, onAdd);
+    const [quantity, setQty] = useState(initial);
 
     const sumaQty = () => {
         if (quantity < stock) {
@@ -28,9 +28,19 @@ const ItemCount = ({ item, stock, initial, onAdd }) => {
                 </div>
             </div>
             {quantity > 0 ? (
-                <div className="button-30 " onClick={() => onAdd(quantity)}>
-                    <i className="material-icons">shopping_cart</i>
+                <div
+                    className="button-30 "
+                    style={{
+                        height: "3rem",
+                        width: "90%",
+                        backgroundColor: "#acb0ecd6",
+                    }}
+                    onClick={() => onAdd(quantity)}
+                >
                     Anadir al carrito
+                    <i className="material-icons" style={{ marginLeft: "5px" }}>
+                        shopping_cart
+                    </i>
                 </div>
             ) : (
                 <button className="button-30" disabled>
