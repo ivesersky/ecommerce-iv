@@ -3,13 +3,17 @@ import { styles } from "./styles";
 import "../components/containers/itemListContainer.css";
 import "../components/Button.css";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
+import { useCartContext } from "../context/CartContext";
 
 export const ItemDetail = ({ item }) => {
-    const [add, setAdd] = useState(false);
+    const [add, setAdd] = useState(false); //itemCount
+    const { addItemToCart, removeItemFromCart } = useCartContext();
 
     const onAdd = (quantity) => {
         setAdd(!add);
-    };
+        addItemToCart(quantity, item);
+    }; //itemCount
 
     return (
         <>
@@ -38,20 +42,16 @@ export const ItemDetail = ({ item }) => {
                                     />
                                 )}
                             </div>
-                            <div
+                            <Link
+                                to="/carrito"
                                 className="button-30 "
                                 style={{
                                     height: "3rem",
                                     width: "90%",
                                 }}
                             >
-                                <a
-                                    href="../vistas/Carrito.jsx"
-                                    style={styles.link}
-                                >
-                                    Finalizar compra
-                                </a>
-                            </div>
+                                Finalizar compra
+                            </Link>
                         </section>
                     </div>
                 ))}

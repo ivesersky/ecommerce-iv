@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useCartContext } from "../context/CartContext";
 import "../components/Button.css";
 
-const ItemCount = ({ item, stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
     const [quantity, setQty] = useState(initial);
 
     const sumaQty = () => {

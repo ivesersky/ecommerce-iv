@@ -10,17 +10,32 @@ export const useCartContext = () => {
 };
 
 const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState(0);
+    const [cartTotal, setCartTotal] = useState([]);
 
-    const addItemToCart = () => {
-        setCartItems(cartItems + 1);
+    const addItemToCart = (quantity, item) => {
+        item.map((item) => {
+            const copyItem = { ...item };
+            copyItem.quantity = quantity;
+            const copyCarrito = cartTotal.slice(0);
+
+            copyCarrito.push(copyItem);
+            setCartTotal(copyCarrito);
+
+            setCartItems(cartItems + quantity);
+        });
     };
     const removeItemFromCart = () => {
         setCartItems(cartItems - 1);
     };
 
-    const globalValue = { cartItems, addItemToCart, removeItemFromCart };
-    console.log(cartItems);
+    const globalValue = {
+        cartItems,
+        addItemToCart,
+        removeItemFromCart,
+        cartTotal,
+    };
+
     return <Provider value={globalValue}>{children}</Provider>;
 };
 export default CartProvider;

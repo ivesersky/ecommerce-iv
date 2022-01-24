@@ -38,7 +38,7 @@ const App = () => {
                             element={"Contacto"}
                             className="defaultText"
                         ></Route>
-                        <Route exact path="/carrito" element={<Carrito />} />
+                        <Route path="/carrito" element={<Carrito />} />
                     </Routes>
                 </BrowserRouter>
             </React.Fragment>
