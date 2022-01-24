@@ -5,8 +5,8 @@
     background-color: #fcfcfd;
     border-radius: 4px;
     border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    box-shadow: #2d234266 0 2px 4px, #2d23424d 0 7px 13px -3px,
+        #d6d6e7 0 -3px 0 inset;
     box-sizing: border-box;
     color: #36395a;
     cursor: pointer;
@@ -44,7 +44,7 @@
 }
 
 .button-30:active {
-    box-shadow: #d6d6e7 0 3px 7px inset;
+    box-shadow: #ececf7 0 3px 7px inset;
     transform: translateY(2px);
 }
 /* CSS */
@@ -131,6 +131,7 @@ button[disabled] {
     border: 1px solid #999999;
     background-color: #cccccc;
     color: #aaa7a7;
+
     cursor: not-allowed;
     pointer-events: none;
 }

@@ -3,7 +3,7 @@ import { styles } from "./styles";
 import "../components/containers/itemListContainer.css";
 import "../components/Button.css";
 import ItemCount from "./ItemCount";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
 
 export const ItemDetail = ({ item }) => {
@@ -42,16 +42,29 @@ export const ItemDetail = ({ item }) => {
                                     />
                                 )}
                             </div>
-                            <Link
-                                to="/carrito"
-                                className="button-30 "
-                                style={{
-                                    height: "3rem",
-                                    width: "90%",
-                                }}
-                            >
-                                Finalizar compra
-                            </Link>
+                            <div className="">
+                                <Link
+                                    to="/carrito"
+                                    className="button-30"
+                                    style={{
+                                        backgroundColor: " #888fe9d7",
+                                        color: "#36395a",
+                                        fontWeight: "bold",
+                                    }}
+                                >
+                                    Checkout
+                                </Link>
+                                <NavLink
+                                    to="/productos"
+                                    className="button-30 "
+                                    style={{
+                                        backgroundColor: "transparent",
+                                        color: "#36395a",
+                                    }}
+                                >
+                                    Seguir comprando
+                                </NavLink>
+                            </div>
                         </section>
                     </div>
                 ))}

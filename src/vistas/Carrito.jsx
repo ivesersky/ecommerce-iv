@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import { cartContext, useCartContext } from "../context/CartContext";
+import { NavLink } from "react-router-dom";
+import { useCartContext } from "../context/CartContext";
 import "./cart.css";
 
 const Carrito = () => {
@@ -24,7 +24,10 @@ const Carrito = () => {
                 {cartTotal.map((item) => (
                     <div className="Cart-Items" key={item.id}>
                         <div className="image-box">
-                            <img src={item.pictureUrl} />
+                            <img
+                                src={item.pictureUrl}
+                                alt={`${item.id}-${item.title}`}
+                            />
                         </div>
                         <div className="about">
                             <h1 className="title">{item.title}</h1>

@@ -32,7 +32,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
                     style={{
                         height: "3rem",
                         width: "90%",
-                        backgroundColor: "#acb0ecd6",
                     }}
                     onClick={() => onAdd(quantity)}
                 >
