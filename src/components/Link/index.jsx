@@ -1,5 +1,6 @@
 import { styles } from "../styles";
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Categorias = [
     { catId: "1", nombre: "HOME", ruta: "/home" },
@@ -20,13 +21,13 @@ const Link = () => {
         <>
             {categorias.map((categoria) => {
                 return (
-                    <a
+                    <NavLink
+                        to={categoria.ruta}
                         key={categoria.catId}
-                        href={categoria.ruta}
                         style={styles.link}
                     >
                         <li>{categoria.nombre}</li>
-                    </a>
+                    </NavLink>
                 );
             })}
         </>
