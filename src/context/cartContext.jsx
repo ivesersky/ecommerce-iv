@@ -12,6 +12,7 @@ export const useCartContext = () => {
 const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState(0);
     const [cartTotal, setCartTotal] = useState([]);
+    const [totalCompra, setTotalCompra] = useState(0);
 
     const estaEnElCarrito = (id) => {
         let EnCarrito = false;
@@ -42,6 +43,7 @@ const CartProvider = ({ children }) => {
                 setCartTotal(copyCarrito);
                 setCartItems(cartItems + quantity);
             }
+            setTotalCompra(totalCompra + copyItem.price * quantity);
         });
     };
 
@@ -49,10 +51,12 @@ const CartProvider = ({ children }) => {
         const copyCartTotal = cartTotal.filter((items) => items.id != item.id);
         setCartTotal(copyCartTotal);
         setCartItems(cartItems - item.quantity);
+        setTotalCompra(totalCompra - item.price * item.quantity);
     };
     const limpiar = () => {
         setCartItems(0);
         setCartTotal([]);
+        setTotalCompra(0);
     };
     const globalValue = {
         cartItems,
@@ -61,6 +65,7 @@ const CartProvider = ({ children }) => {
         cartTotal,
         estaEnElCarrito,
         limpiar,
+        totalCompra,
     };
 
     return <Provider value={globalValue}>{children}</Provider>;
