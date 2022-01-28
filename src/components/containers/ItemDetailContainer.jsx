@@ -23,13 +23,13 @@ export const ItemDetailContainer = () => {
         const itemCollection = baseDatos.collection("items");
         itemCollection.get().then((value) => {
             let aux = value.docs.map((e) => {
-                return { ...e.data(), id: e.itemId };
+                return { ...e.data(), itemId: e.id };
             });
             let product = aux.find((e) => {
                 return e.id === itemId;
             });
             setProduct(product);
-            console.log(itemId);
+            console.log(itemId); //cuando pongo product no lo reconoce
             setLoading(false);
         });
     }, []);
