@@ -4,6 +4,7 @@ import data from "../data/data";
 import { ItemList } from "../ItemList/itemList";
 import { useParams } from "react-router-dom";
 import ItemListLoader from "../ItemListLoader";
+import { getFirestore } from "../../firebase/index";
 
 export const ItemListContainer = ({ item }) => {
     const [items, setItems] = useState([]);
@@ -29,6 +30,15 @@ export const ItemListContainer = ({ item }) => {
             })
             .finally(() => setLoading(false));
     }, [catId]);
+
+    //esto es para importar la data firebase
+    useEffect(() => {
+        const baseDatos = getFirestore();
+        const itemCollection = baseDatos.collection("items");
+        itemCollection
+            .get()
+            .then((value) => value.docs.map((e) => console.log(e.data())));
+    }, []);
 
     return (
         <div className="container">

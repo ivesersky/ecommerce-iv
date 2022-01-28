@@ -1,4 +1,4 @@
-import firebase from "./firebase/app";
+import firebase from "firebase/app";
 import "@firebase/firestore";
 
 const app = firebase.initializeApp({
@@ -9,3 +9,9 @@ const app = firebase.initializeApp({
     messagingSenderId: "1030758641377",
     appId: "1:1030758641377:web:36f3cd331fd9b78aa691a0",
 });
+export const getFirebase = () => {
+    return app;
+};
+export const getFirestore = () => {
+    return firebase.firestore(app);
+};
