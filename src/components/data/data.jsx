@@ -31,15 +31,15 @@ const data = [
     {
         id: 5,
         title: "Cena",
-        description: "Fotografia 35mm Kodak Gold 200a",
-        price: 850,
+        description: "Fotografia 35mm Kodak Gold 200",
+        price: 950,
         pictureUrl: "../img/camping.jpg",
     },
     {
         id: 6,
         title: "Cubico",
         description: "Fotografia 35mm Kodak Gold 200",
-        price: 850,
+        price: 680,
         pictureUrl: "../img/rombo.jpg",
     },
     {
@@ -53,7 +53,7 @@ const data = [
         id: 8,
         title: "Gati",
         description: "Fotografia 35mm Kodak Gold 200",
-        price: 850,
+        price: 870,
         pictureUrl: "../img/gati.jpg",
     },
 ];

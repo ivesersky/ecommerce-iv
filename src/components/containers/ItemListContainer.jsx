@@ -31,7 +31,7 @@ export const ItemListContainer = ({ item }) => {
             .finally(() => setLoading(false));
     }, [catId]);
 
-    //esto es para importar la data firebase
+    // importar  data de firebase
     useEffect(() => {
         const baseDatos = getFirestore();
         const itemCollection = baseDatos.collection("items");
