@@ -35,9 +35,12 @@ export const ItemListContainer = ({ item }) => {
     useEffect(() => {
         const baseDatos = getFirestore();
         const itemCollection = baseDatos.collection("items");
-        itemCollection
-            .get()
-            .then((value) => value.docs.map((e) => console.log(e.data())));
+        itemCollection.get().then((value) => {
+            let aux = value.docs.map((e) => {
+                return { ...e.data(), id: e.id };
+            });
+            setItems(aux);
+        });
     }, []);
 
     return (
