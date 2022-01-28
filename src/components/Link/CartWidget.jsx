@@ -1,7 +1,7 @@
 import React from "react";
 import { styles } from "../styles";
 import { useState } from "react";
-import { useCartContext } from "../../context/CartContext";
+import { useCartContext } from "../../context/cartContext";
 
 const CartWidget = ({ ruta }) => {
     const [hover, setHover] = useState(false);
