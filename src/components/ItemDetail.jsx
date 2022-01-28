@@ -4,7 +4,7 @@ import "../components/containers/itemListContainer.css";
 import "../components/Button.css";
 import ItemCount from "./ItemCount";
 import { Link, NavLink } from "react-router-dom";
-import { useCartContext } from "../context/CartContext";
+import { useCartContext } from "../context/cartContext";
 
 export const ItemDetail = ({ item }) => {
     const [add, setAdd] = useState(false); //itemCount

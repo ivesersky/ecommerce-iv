@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useCartContext } from "../context/CartContext";
+import { useCartContext } from "../context/cartContext";
 import "./cart.css";
 
 const Carrito = () => {

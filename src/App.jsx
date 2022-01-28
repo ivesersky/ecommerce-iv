@@ -7,7 +7,7 @@ import React from "react";
 import { ItemDetailContainer } from "./components/containers/ItemDetailContainer";
 import "./components/containers/itemListContainer.css";
 import Carrito from "./vistas/Carrito";
-import CartProvider from "./context/CartContext";
+import CartProvider from "./context/cartContext";
 
 const App = () => {
     return (
