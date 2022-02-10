@@ -8,7 +8,7 @@ import { useCartContext } from "../context/cartContext";
 
 export const ItemDetail = ({ item }) => {
     const [add, setAdd] = useState(false); //itemCount
-    const { addItemToCart, removeItemFromCart } = useCartContext();
+    const { addItemToCart } = useCartContext();
 
     const onAdd = (quantity) => {
         setAdd(!add);
@@ -71,5 +71,3 @@ export const ItemDetail = ({ item }) => {
         </>
     );
 };
-
-//arreglar el link al carrito

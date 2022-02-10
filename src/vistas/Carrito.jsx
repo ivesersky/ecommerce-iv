@@ -2,10 +2,30 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useCartContext } from "../context/cartContext";
 import "./cart.css";
+import { db } from "../firebase";
+import {
+    addDoc,
+    serverTimestamp,
+    setDoc,
+    collection,
+} from "firebase/firestore";
 
 const Carrito = () => {
     const { cartTotal, removeItemFromCart, limpiar, totalCompra } =
         useCartContext();
+
+    const finalizarCompra = () => {
+        console.log("Guardando en la base de datos, aguarde..");
+        const ventasCollection = collection(db, "ventas");
+        addDoc(ventasCollection, {
+            buyer: { name: "John", lastName: "Smith", email: "John@John.com" },
+            items: cartTotal,
+            date: serverTimestamp(),
+            total: 100,
+        }).then((resultado) => {
+            console.log(resultado);
+        });
+    };
     if (cartTotal.length > 0) {
         return (
             <div className="cart-container">
@@ -64,10 +84,13 @@ const Carrito = () => {
                             limpiar();
                         }}
                     >
-                        Remove all
+                        Borrar Todo
                     </h5>
                     <div className="about">
                         <h3 className="defaultFont ">No hay items</h3>
+                        <NavLink to="/productos" className="Action defaultFont">
+                            Finalizar compra
+                        </NavLink>
                         <NavLink to="/productos" className="Action defaultFont">
                             Seguir comprando
                         </NavLink>

@@ -1,41 +1,42 @@
 import React, { useState, useEffect } from "react";
+import { db } from "../../firebase";
 import { ItemDetail } from "../ItemDetail";
 import { useParams } from "react-router-dom";
-import { getFirestore } from "../../firebase/firebase"; //ahora tengo que importar lo de itemlist
+import { getDocs, query, collection, where } from "firebase/firestore";
+import ItemListLoader from "../ItemListLoader";
 
-export const ItemDetailContainer = () => {
+const ItemDetailContainer = () => {
     const [product, setProduct] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
-    const { itemId } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
         setLoading(true);
-        // const getItems = new Promise((resolve) => {
-        //     setTimeout(() => {
-        //         const myData = data.filter((item) => item.id == itemId);
+        const itemCollection = collection(db, "items");
 
-        //         resolve(myData);
-        //     }, 1000);
-        // });
+        if (id) {
+            const consulta = query(itemCollection, where("id", "==", id));
+            getDocs(consulta)
+                .then(({ docs }) => {
+                    setProduct(docs.map((doc) => ({ ...doc.data() })));
+                })
+                .catch((error) => {
+                    alert("Error en la carga del producto");
+                    console.log(error);
+                })
+                .finally(() => setLoading(false));
+        }
+    }, [id]);
 
-        const baseDatos = getFirestore();
-        const itemCollection = baseDatos.collection("items");
-        itemCollection.get().then((value) => {
-            let aux = value.docs.map((e) => {
-                return { ...e.data(), itemId: e.id };
-            });
-            let product = aux.find((e) => {
-                return e.id === itemId;
-            });
-            setProduct(product);
-            console.log(itemId); //cuando pongo product no lo reconoce
-            setLoading(false);
-        });
-    }, []);
-    return loading ? (
-        <h1 className="defaultText">Cargando...</h1>
-    ) : (
-        <ItemDetail item={product} />
+    return (
+        <>
+            {loading == true && product.length === 0 ? (
+                <ItemListLoader />
+            ) : (
+                <ItemDetail item={product} />
+            )}
+        </>
     );
 };
+export default ItemDetailContainer;

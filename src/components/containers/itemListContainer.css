@@ -20,7 +20,8 @@
     transition: all 0.5s ease-in-out;
     box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
     backdrop-filter: blur(14px);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(248, 246, 241, 0.904);
+    padding: 10px;
 }
 .blurbg:focus {
     box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
@@ -44,12 +45,13 @@ img {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-
+    margin-bottom: 2rem;
     position: absolute;
     grid-gap: 2em;
     width: 90vw;
+    height: 90vh;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: baseline;
 }
 .container > * {
     flex-grow: 1;

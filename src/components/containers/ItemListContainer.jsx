@@ -1,47 +1,44 @@
 import "./itemListContainer.css";
 import { useEffect, useState } from "react";
-import data from "../data/data";
 import { ItemList } from "../ItemList/itemList";
 import { useParams } from "react-router-dom";
 import ItemListLoader from "../ItemListLoader";
-import { getFirestore } from "../../firebase/firebase";
+import { db } from "../../firebase"; //acceso a base de datos
+import { getDocs, query, collection, where } from "firebase/firestore";
 
 export const ItemListContainer = ({ item }) => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const { catId } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
         setLoading(true);
-        const getItems = new Promise((resolve) => {
-            setTimeout(() => {
-                const myData = catId
-                    ? data.filter((item) => item.category === catId)
-                    : data;
-
-                resolve(myData);
-            }, 1000);
-        });
-
-        getItems
-            .then((res) => {
-                setItems(res);
-            })
-            .finally(() => setLoading(false));
-    }, [catId]);
-
-    // importar  data de firebase
-    useEffect(() => {
-        const baseDatos = getFirestore();
-        const itemCollection = baseDatos.collection("items");
-        itemCollection.get().then((value) => {
-            let aux = value.docs.map((e) => {
-                return { ...e.data(), id: e.id };
-            });
-            setItems(aux);
-        });
-    }, []);
+        const itemCollection = collection(db, "items"); //acceso a la coleccion
+        if (id) {
+            const consulta = query(
+                itemCollection,
+                where("categoria", "==", id)
+            );
+            getDocs(consulta)
+                .then(({ docs }) => {
+                    setItems(docs.map((doc) => ({ ...doc.data() })));
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+                .finally(() => setLoading(false));
+        } else {
+            getDocs(itemCollection)
+                .then(({ docs }) => {
+                    setItems(docs.map((doc) => ({ ...doc.data() })));
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+                .finally(() => setLoading(false));
+        }
+    }, [id]);
 
     return (
         <div className="container">
