@@ -10,7 +10,7 @@ export const Item = ({ id, title, pictureUrl, description }) => {
         <Link to={`/producto/${id}`} style={styles.detailRow}>
             <div className="blurbg">
                 <img src={`./img/${pictureUrl}`} alt="" />
-                <div>
+                <div className="flex col-1">
                     <h2>{title}</h2>
                     <span>{description}</span>
                     <button to="/carrito" className="button-30">

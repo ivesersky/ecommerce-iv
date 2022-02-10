@@ -21,7 +21,7 @@ const App = () => {
                             exact
                             path="/productos"
                             element={
-                                <div className="container">
+                                <div>
                                     <ItemListContainer />
                                 </div>
                             }

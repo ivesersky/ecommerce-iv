@@ -1,12 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
-    background: -webkit-gradient(
-            linear,
-            left top,
-            left bottom,
-            from(#d8c7e6),
-            to(#acb0ecd7)
-        )
-        fixed;
-
-    color: #888fe9d7;
+    background-color: #ebe5dc;
 }

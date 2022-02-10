@@ -4,7 +4,7 @@ import data from "../data/data";
 import { ItemList } from "../ItemList/itemList";
 import { useParams } from "react-router-dom";
 import ItemListLoader from "../ItemListLoader";
-import { getFirestore } from "../../firebase/index";
+import { getFirestore } from "../../firebase/firebase";
 
 export const ItemListContainer = ({ item }) => {
     const [items, setItems] = useState([]);

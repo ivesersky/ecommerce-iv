@@ -1,3 +1,11 @@
+.flex {
+    display: flex;
+}
+.col-1 {
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
 .blurbg {
     display: flex;
     flex-flow: row wrap;
@@ -7,17 +15,28 @@
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     /* From https://css.glass */
     /* background: rgba(255, 255, 255, 0.712); */
-    border-radius: 16px;
-
+    border-radius: 4em;
+    justify-content: space-around;
     transition: all 0.5s ease-in-out;
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+    backdrop-filter: blur(14px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.blurbg:focus {
+    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
 }
 .blurbg:hover {
-    transform: scale(1);
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    transform: translateY(-2px);
 }
 
 img {
-    width: 100%;
-    border-radius: 4px;
+    width: 90%;
+    border-radius: 2em;
+    margin-bottom: 1em;
+    margin-top: 2em;
 }
 
 .container {
@@ -25,11 +44,16 @@ img {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    align-items: center;
-    justify-content: center;
-    grid-gap: 10px;
+
+    position: absolute;
+    grid-gap: 2em;
     width: 90vw;
-    height: 80vh;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.container > * {
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
 .defaultText {
