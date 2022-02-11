@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Categorias = [
-    { catId: "1", nombre: "HOME", ruta: "/home" },
-    { catId: "2", nombre: "PRODUCTOS", ruta: "/productos" },
-    { catId: "3", nombre: "CONTACTO", ruta: "/contacto" },
+    { catId: "1", nombre: "PRODUCTOS", ruta: "/" },
+    { catId: "2", nombre: "CATEGORIAS", ruta: "/categorias" },
 ];
 
 const Link = () => {

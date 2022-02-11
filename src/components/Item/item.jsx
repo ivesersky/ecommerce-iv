@@ -7,9 +7,14 @@ import "../Button.css";
 
 export const Item = ({ id, title, pictureUrl, description }) => {
     return (
-        <Link to={`/producto/${id}`} style={styles.detailRow}>
-            <div className="blurbg">
-                <img src={`./img/${pictureUrl}`} alt="" />
+        <div className="blurbg">
+            <Link to={`/producto/${id}`} style={styles.link}>
+                <div className="flex-img">
+                    <img
+                        src={`./img/${pictureUrl}`}
+                        alt={`/producto/${title}`}
+                    />
+                </div>
                 <div className="flex col-1">
                     <h2>{title}</h2>
                     <span>{description}</span>
@@ -17,7 +22,7 @@ export const Item = ({ id, title, pictureUrl, description }) => {
                         Ver mas
                     </button>
                 </div>
-            </div>
-        </Link>
+            </Link>
+        </div>
     );
 };

@@ -10,7 +10,7 @@ export const styles = {
     list: {
         listStyleType: "none",
         display: "grid",
-        gridTemplateColumns: "repeat(4,1fr)",
+        gridTemplateColumns: "repeat(3,1fr)",
         justifyContent: "space-evenly",
         alignItems: "center",
         textAlign: "center",
@@ -18,10 +18,11 @@ export const styles = {
         backgroundColor: "transparent",
     },
     nav: {
-        marginTop: "40px",
+        marginTop: "20px",
+        marginBottom: "4em",
         position: "relative",
         display: "flex",
-        height: "4rem",
+        height: "2.5rem",
         flexFlow: "row nowrap",
         justifyContent: "space-evenly",
         alignItems: "center",
@@ -31,7 +32,7 @@ export const styles = {
     },
     hover: {
         fontWeight: "bold",
-        filter: "invert(90%)",
+        color: "#f1a5a5",
         transform: "scale(1.1)",
     },
     flexCol: {

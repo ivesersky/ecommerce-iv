@@ -10,7 +10,7 @@ import {styles} from "../styles"
 function NavBar() {
      return (
         <nav style={styles.nav}>
-            <a href="/home" >
+            <a href="/" >
             <LogoBar/>
             </a>
             
