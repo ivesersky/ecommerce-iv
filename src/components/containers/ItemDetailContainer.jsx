@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { db } from "../../firebase";
+import { db } from "../../firebase.js";
 import { ItemDetail } from "../ItemDetail";
 import { useParams } from "react-router-dom";
 import { getDocs, query, collection, where } from "firebase/firestore";
@@ -7,16 +7,17 @@ import ItemListLoader from "../ItemListLoader";
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState([]);
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
 
     const { id } = useParams();
 
     useEffect(() => {
-        setLoading(true);
-        const itemCollection = collection(db, "items");
+        // setLoading(true);
+
+        const dbDetailItem = collection(db, "detalles_item");
 
         if (id) {
-            const consulta = query(itemCollection, where("id", "==", id));
+            const consulta = query(dbDetailItem, where("id", "==", id));
             getDocs(consulta)
                 .then(({ docs }) => {
                     setProduct(docs.map((doc) => ({ ...doc.data() })));
@@ -24,17 +25,22 @@ const ItemDetailContainer = () => {
                 .catch((error) => {
                     alert("Error en la carga del producto");
                     console.log(error);
-                })
-                .finally(() => setLoading(false));
+                });
+            // .finally(() => setLoading(false));
         }
+        //  else {
+        //     setLoading(true);
+        // }
     }, [id]);
 
     return (
         <>
-            {loading == true && product.length === 0 ? (
-                <ItemListLoader />
+            {product.length === 0 ? (
+                <h3>Cargando detalle de un producto</h3>
             ) : (
-                <ItemDetail item={product} />
+                <>
+                    <ItemDetail item={product} />
+                </>
             )}
         </>
     );

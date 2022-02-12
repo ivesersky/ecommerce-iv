@@ -91,7 +91,7 @@ const Carrito = () => {
                         <NavLink to="/productos" className="Action defaultFont">
                             Finalizar compra
                         </NavLink>
-                        <NavLink to="/productos" className="Action defaultFont">
+                        <NavLink to="/" className="Action defaultFont">
                             Seguir comprando
                         </NavLink>
                     </div>

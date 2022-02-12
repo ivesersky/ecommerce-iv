@@ -29,11 +29,11 @@ const App = () => {
                                 ></Route>
                                 <Route
                                     exact
-                                    path="/producto/:itemId"
+                                    path="/producto/:id"
                                     element={<ItemDetailContainer />}
                                 ></Route>
                                 <Route
-                                    path="/category/:id"
+                                    path="/categoria/:id"
                                     element={<ItemListContainer />}
                                 />
                                 <Route path="/carrito" element={<Carrito />} />

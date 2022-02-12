@@ -34,6 +34,8 @@ export const ItemListContainer = ({ item }) => {
                     setItems(docs.map((doc) => ({ ...doc.data() })));
                 })
                 .catch((error) => {
+                    alert("Error en la carga de los productos");
+
                     console.log(error);
                 })
                 .finally(() => setLoading(false));
