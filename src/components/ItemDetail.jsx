@@ -7,13 +7,13 @@ import { Link, NavLink } from "react-router-dom";
 import { useCartContext } from "../context/cartContext";
 
 export const ItemDetail = ({ item }) => {
-    const [add, setAdd] = useState(false); //itemCount
+    const [add, setAdd] = useState(false);
     const { addItemToCart } = useCartContext();
 
     const onAdd = (quantity) => {
         setAdd(!add);
         addItemToCart(quantity, item);
-    }; //itemCount
+    };
 
     return (
         <>
@@ -55,7 +55,7 @@ export const ItemDetail = ({ item }) => {
                                     Checkout
                                 </Link>
                                 <NavLink
-                                    to="/productos"
+                                    to="/"
                                     className="button-30 "
                                     style={{
                                         backgroundColor: "transparent",

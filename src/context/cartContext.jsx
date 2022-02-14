@@ -1,6 +1,5 @@
 import { createContext, useContext } from "react";
-import { useState } from "react/cjs/react.development";
-
+import { useState } from "react";
 export const cartContext = createContext();
 
 const { Provider } = cartContext;
@@ -17,7 +16,7 @@ const CartProvider = ({ children }) => {
     const estaEnElCarrito = (id) => {
         let EnCarrito = false;
         for (let i = 0; i < cartTotal.length; i++) {
-            if (cartTotal[i].id == id) {
+            if (cartTotal[i].id === id) {
                 EnCarrito = true;
             }
         }
@@ -29,7 +28,7 @@ const CartProvider = ({ children }) => {
             const copyItem = { ...item };
             if (estaEnElCarrito(copyItem.id)) {
                 for (let i = 0; i < cartTotal.length; i++) {
-                    if (cartTotal[i].id == copyItem.id) {
+                    if (cartTotal[i].id === copyItem.id) {
                         cartTotal[i].quantity =
                             cartTotal[i].quantity + quantity;
                     }
@@ -48,7 +47,7 @@ const CartProvider = ({ children }) => {
     };
 
     const removeItemFromCart = (item) => {
-        const copyCartTotal = cartTotal.filter((items) => items.id != item.id);
+        const copyCartTotal = cartTotal.filter((items) => items.id !== item.id);
         setCartTotal(copyCartTotal);
         setCartItems(cartItems - item.quantity);
         setTotalCompra(totalCompra - item.price * item.quantity);

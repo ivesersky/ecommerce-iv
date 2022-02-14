@@ -19,7 +19,6 @@ const App = () => {
                             <NavBar />
                             <Routes>
                                 <Route
-                                    exact
                                     path="/"
                                     element={
                                         <div>
@@ -28,7 +27,6 @@ const App = () => {
                                     }
                                 ></Route>
                                 <Route
-                                    exact
                                     path="/producto/:id"
                                     element={<ItemDetailContainer />}
                                 ></Route>

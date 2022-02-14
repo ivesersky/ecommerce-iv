@@ -8,7 +8,7 @@ import "../Button.css";
 export const Item = ({ id, title, pictureUrl, description }) => {
     return (
         <div className="blurbg">
-            <Link to={`/producto/${id}`} style={styles.link}>
+            <Link to={"/producto/" + id} style={styles.link}>
                 <div className="flex-img">
                     <img
                         src={`./img/${pictureUrl}`}

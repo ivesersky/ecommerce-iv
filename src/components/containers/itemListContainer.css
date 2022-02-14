@@ -69,16 +69,22 @@
 .centered {
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
 .productDetailCentered {
     margin: 2rem;
+    padding: 20px;
     display: grid;
     grid-template-columns: 2fr 2fr;
     grid-gap: 2rem;
     align-items: center;
     justify-content: center;
     width: 650px;
+}
+.productDetailCentered img {
+    width: 80%;
+    border-radius: 8px;
 }
 
 .contador {

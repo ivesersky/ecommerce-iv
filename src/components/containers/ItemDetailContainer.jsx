@@ -3,7 +3,7 @@ import { db } from "../../firebase.js";
 import { ItemDetail } from "../ItemDetail";
 import { useParams } from "react-router-dom";
 import { getDocs, query, collection, where } from "firebase/firestore";
-import ItemListLoader from "../ItemListLoader";
+// import ItemListLoader from "../ItemListLoader";
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState([]);
@@ -21,9 +21,10 @@ const ItemDetailContainer = () => {
             getDocs(consulta)
                 .then(({ docs }) => {
                     setProduct(docs.map((doc) => ({ ...doc.data() })));
+                    console.log(docs.data);
                 })
                 .catch((error) => {
-                    alert("Error en la carga del producto");
+                    // alert("Error en la carga del producto");
                     console.log(error);
                 });
             // .finally(() => setLoading(false));

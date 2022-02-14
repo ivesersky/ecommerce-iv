@@ -66,7 +66,16 @@ const Carrito = () => {
                     </div>
                 ))}
                 <div className="Header">
-                    <NavLink to="/productos" className="Action defaultFont">
+                    <NavLink
+                        to="/carrito"
+                        className="Action defaultFont"
+                        onClick={() => {
+                            finalizarCompra();
+                        }}
+                    >
+                        Finalizar compra
+                    </NavLink>
+                    <NavLink to="/" className="Action defaultFont">
                         Seguir comprando
                     </NavLink>
                     <h2 className="defaultFont">Total : $ {totalCompra}</h2>
@@ -88,9 +97,7 @@ const Carrito = () => {
                     </h5>
                     <div className="about">
                         <h3 className="defaultFont ">No hay items</h3>
-                        <NavLink to="/productos" className="Action defaultFont">
-                            Finalizar compra
-                        </NavLink>
+
                         <NavLink to="/" className="Action defaultFont">
                             Seguir comprando
                         </NavLink>
