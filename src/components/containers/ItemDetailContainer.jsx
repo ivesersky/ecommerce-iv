@@ -3,16 +3,16 @@ import { db } from "../../firebase.js";
 import { ItemDetail } from "../ItemDetail";
 import { useParams } from "react-router-dom";
 import { getDocs, query, collection, where } from "firebase/firestore";
-// import ItemListLoader from "../ItemListLoader";
+import ItemListLoader from "../ItemListLoader";
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState([]);
-    // const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const { id } = useParams();
 
     useEffect(() => {
-        // setLoading(true);
+        setLoading(true);
 
         const dbDetailItem = collection(db, "detalles_item");
 
@@ -26,23 +26,16 @@ const ItemDetailContainer = () => {
                 .catch((error) => {
                     // alert("Error en la carga del producto");
                     console.log(error);
-                });
-            // .finally(() => setLoading(false));
+                })
+                .finally(() => setLoading(false));
         }
-        //  else {
-        //     setLoading(true);
-        // }
     }, [id]);
 
     return (
         <>
-            {product.length === 0 ? (
-                <h3>Cargando detalle de un producto</h3>
-            ) : (
-                <>
-                    <ItemDetail item={product} />
-                </>
-            )}
+            <div className="container">
+                {loading ? <ItemListLoader /> : <ItemDetail item={product} />}
+            </div>
         </>
     );
 };

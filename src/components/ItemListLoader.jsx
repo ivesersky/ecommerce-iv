@@ -5,7 +5,7 @@ const ItemListLoader = () => {
     return (
         <>
             <div style={styles.container}>
-                {[...new Array(4)].map((_, index) => (
+                {[...new Array(1)].map((_, index) => (
                     <div style={styles.loader} key={index}>
                         <Item
                             {...{
