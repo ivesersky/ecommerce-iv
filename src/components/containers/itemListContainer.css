@@ -22,7 +22,7 @@
     transition: all 0.5s ease-in-out;
     box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
     backdrop-filter: blur(14px);
-    background-color: rgba(228, 234, 248, 0.705);
+    background-color: rgba(253, 253, 255, 0.705);
 }
 .blurbg:focus {
     box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
